@@ -1,0 +1,117 @@
+/* Set up the basic page styling */
+body {
+  font-family: Arial, sans-serif;    
+  display: flex;                      
+  justify-content: center;
+  align-items: center;
+  height: 100vh;                      
+  background-color: #ffffff;         
+  margin: 0;
+}
+
+/* Container for the calculator */
+.calculator {
+  background-color: rgb(57, 63, 74);           
+  padding: 20px;                     
+  border-radius: 12px;              
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+  width: 600px;
+  max-width: 90%;
+}
+
+/* Title styling */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Input field for expression */
+#input-value {
+  width: 100%;                      
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+/* Output display */
+#output {
+  background-color: #ffffff;
+  padding: 10px;
+  font-size: 22px;
+  min-height: 30px;
+  margin-bottom: 20px;
+}
+
+/* Container holding all buttons */
+.buttons {
+  display: flex;                      /* Side-by-side panels */
+  gap: 20px;                          
+}
+
+/* left panel */
+.left-panel {
+  display: flex;
+  flex-direction: column;            /* Stack buttons vertically */
+  gap: 10px;
+  flex: 1;
+}
+
+
+/* Right panel */
+.right-panel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Number buttons arranged in grid */
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Operator buttons in 2-column layout */
+.operators {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px;
+}
+
+/* Control buttons: clear and evaluate */
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+/* Button styling for all buttons */
+button {
+  padding: 12px;
+  font-size: 22px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffffff;        
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+
+/* Change color when hovered */
+button:hover {
+  background-color: #bcbcbc;
+}
+
+#clear{
+  background-color: #45a049;
+  width: 40%;
+}
+
+#evaluate{
+  background-color: red;
+  width: 40%;
+}

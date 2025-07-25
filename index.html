@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="calculator">
+    <h1>Scientific Calculator</h1>
+
+    <!-- Input field to type expression -->
+    <input type="text" id="input-value" placeholder="Enter expression..." />
+
+    <!-- Output result area -->
+    <div id="output">Result: </div>
+
+    <div class="buttons">
+      
+      <!-- Left Panel: Scientific functions -->
+      <div class="left-panel">
+        <button data-value="sin(">sin</button>
+        <button data-value="cos(">cos</button>
+        <button data-value="tan(">tan</button>
+        <button data-value="sqrt(">√</button>
+        <button data-value="π">π</button>
+        <button data-value="e">e</button>
+      </div>
+
+      <!-- Right Panel: Numbers, operators, and controls -->
+      <div class="right-panel">
+        <div class="numbers">
+          <button data-value="7">7</button>
+          <button data-value="8">8</button>
+          <button data-value="9">9</button>
+          <button data-value="4">4</button>
+          <button data-value="5">5</button>
+          <button data-value="6">6</button>
+          <button data-value="1">1</button>
+          <button data-value="2">2</button>
+          <button data-value="3">3</button>
+          <button data-value="0">0</button>
+          <button data-value=".">.</button>
+          <button data-value="^">^</button>
+        </div>
+
+        <div class="operators">
+          <button data-value="+">+</button>
+          <button data-value="-">-</button>
+          <button data-value="*">*</button>
+          <button data-value="/">/</button>
+          <button data-value="(">(</button>
+          <button data-value=")">)</button>
+        </div>
+
+        <div class="controls">
+          <button id="clear">C</button>
+          <button id="evaluate">=</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

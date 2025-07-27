@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scientific Calculator</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
@@ -11,15 +11,31 @@
   <div class="calculator">
     <h1>Scientific Calculator</h1>
 
-    <!-- Input field to type expression -->
-    <input type="text" id="input-value" placeholder="Enter expression..." />
+    <!-- Display Section -->
+    <div class="display">
+      <input type="text" id="input-value" placeholder="Enter expression..." />
+      <div id="output">Result: </div>
+    </div>
 
-    <!-- Output result area -->
-    <div id="output">Result: </div>
+    <!-- Main Controls -->
+    <div class="main-controls">
+      <button id="clear">C</button>
+      <button id="all-clear">AC</button>
+      <button id="backspace">⌫</button>
+      <button id="evaluate">=</button>
+    </div>
 
-    <div class="buttons">
+    <!-- Extra Controls (History & Store) -->
+    <div class="extra-controls">
+      <button id="memory-backward">⇦</button>
+      <button id="memory-forward">⇨</button>
+      <button id="store-btn">Store</button>
+    </div>
+
+    <!-- Button Panels -->
+    <div class="button-panels">
       
-      <!-- Left Panel: Scientific functions -->
+      <!-- Left: Scientific -->
       <div class="left-panel">
         <button data-value="sin(">sin</button>
         <button data-value="cos(">cos</button>
@@ -29,7 +45,7 @@
         <button data-value="e">e</button>
       </div>
 
-      <!-- Right Panel: Numbers, operators, and controls -->
+      <!-- Right: Numbers + Operators -->
       <div class="right-panel">
         <div class="numbers">
           <button data-value="7">7</button>
@@ -45,7 +61,6 @@
           <button data-value=".">.</button>
           <button data-value="^">^</button>
         </div>
-
         <div class="operators">
           <button data-value="+">+</button>
           <button data-value="-">-</button>
@@ -53,11 +68,6 @@
           <button data-value="/">/</button>
           <button data-value="(">(</button>
           <button data-value=")">)</button>
-        </div>
-
-        <div class="controls">
-          <button id="clear">C</button>
-          <button id="evaluate">=</button>
         </div>
       </div>
 

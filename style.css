@@ -1,117 +1,235 @@
-/* Set up the basic page styling */
-body {
-  font-family: Arial, sans-serif;    
-  display: flex;                      
-  justify-content: center;
-  align-items: center;
-  height: 100vh;                      
-  background-color: #ffffff;         
+/* Reset and base styling */
+* {
   margin: 0;
-}
-
-/* Container for the calculator */
-.calculator {
-  background-color: rgb(57, 63, 74);           
-  padding: 20px;                     
-  border-radius: 12px;              
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
-  width: 600px;
-  max-width: 90%;
-}
-
-/* Title styling */
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-/* Input field for expression */
-#input-value {
-  width: 100%;                      
-  padding: 10px;
-  font-size: 18px;
-  margin-bottom: 10px;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* Output display */
-#output {
-  background-color: #ffffff;
-  padding: 10px;
-  font-size: 22px;
-  min-height: 30px;
-  margin-bottom: 20px;
-}
-
-/* Container holding all buttons */
-.buttons {
-  display: flex;                      /* Side-by-side panels */
-  gap: 20px;                          
-}
-
-/* left panel */
-.left-panel {
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;            /* Stack buttons vertically */
-  gap: 10px;
-  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
+/* Calculator container */
+.calculator {
+  background: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Heading */
+h1 {
+  color: #333;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+/* Display section */
+.display {
+  margin-bottom: 15px;
+}
+
+#input-value {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+  margin-bottom: 8px;
+  font-family: monospace;
+}
+
+#input-value:focus {
+  outline: none;
+  border-color: #666;
+}
+
+#output {
+  background: #f8f8f8;
+  color: #333;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-weight: normal;
+  font-size: 0.95rem;
+  font-family: monospace;
+  min-height: 18px;
+}
+
+/* Main controls */
+.main-controls {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.main-controls button {
+  padding: 10px;
+  background: #e8e8e8;
+  color: #333;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.main-controls button:hover {
+  background: #d8d8d8;
+}
+
+#evaluate {
+  background: #4a90e2;
+  color: white;
+  border-color: #357abd;
+}
+
+#evaluate:hover {
+  background: #357abd;
+}
+
+/* Extra controls */
+.extra-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.extra-controls button {
+  padding: 8px;
+  background: #f5f5f5;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.extra-controls button:hover {
+  background: #eaeaea;
+}
+
+/* Button panels */
+.button-panels {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px;
+}
+
+/* Left panel - Scientific functions */
+.left-panel {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.left-panel button {
+  padding: 10px 6px;
+  background: #6c7b7f;
+  color: white;
+  border: 1px solid #5a6569;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.left-panel button:hover {
+  background: #5a6569;
+}
 
 /* Right panel */
 .right-panel {
-  flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 8px;
 }
 
-/* Number buttons arranged in grid */
+/* Numbers grid */
 .numbers {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 6px;
 }
 
-/* Operator buttons in 2-column layout */
+.numbers button {
+  padding: 12px;
+  background: #ffffff;
+  color: #333;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.numbers button:hover {
+  background: #f0f0f0;
+}
+
+/* Operators */
 .operators {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
 }
 
-/* Control buttons: clear and evaluate */
-.controls {
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
-}
-
-/* Button styling for all buttons */
-button {
-  padding: 12px;
-  font-size: 22px;
-  border: none;
-  border-radius: 8px;
-  background-color: #ffffff;        
-  color: rgb(0, 0, 0);
+.operators button {
+  padding: 10px;
+  background: #d4a574;
+  color: white;
+  border: 1px solid #b8935f;
+  border-radius: 4px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
-
-/* Change color when hovered */
-button:hover {
-  background-color: #bcbcbc;
+.operators button:hover {
+  background: #b8935f;
 }
 
-#clear{
-  background-color: #45a049;
-  width: 40%;
+/* Responsive design */
+@media (max-width: 480px) {
+  .calculator {
+    padding: 15px;
+    margin: 10px;
+  }
+  
+  h1 {
+    font-size: 1.2rem;
+  }
+  
+  .button-panels {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .left-panel {
+    grid-template-columns: repeat(3, 1fr);
+    order: 2;
+  }
 }
 
-#evaluate{
-  background-color: red;
-  width: 40%;
+/* Active button state */
+button:active {
+  background: #ccc;
+}
+
+/* Focus states */
+button:focus {
+  outline: 1px solid #4a90e2;
 }

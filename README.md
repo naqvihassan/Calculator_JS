@@ -26,4 +26,4 @@ A simple scientific calculator with variable storage and history features.
 - `⇦` `⇨` - Navigate through calculation history
 
 ## Live Demo
-[Try it here](https://yourusername.github.io/repository-name)
+https://naqvihassan.github.io/Calculator_JS/

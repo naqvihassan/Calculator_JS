@@ -20,6 +20,9 @@ A simple scientific calculator with variable storage and history features.
 3. Type variable name (x, y, z or combinations like xy, xz, xyz): `5 + 5 => x` → press `=`
 4. Use later: `x * 2`
 
+**Toggle button:**
+-Toggle button to switch between dark theme and light theme
+
 **Controls:**
 - `C` - Clear input
 - `AC` - Clear everything (input, history, variables)

@@ -5,34 +5,120 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Dark theme (default) */
+  --bg-color: #2c2c2c;
+  --calculator-bg: #1a1a1a;
+  --calculator-border: #555;
+  --text-color: #e0e0e0;
+  --input-bg: #333;
+  --input-border: #666;
+  --input-focus-bg: #444;
+  --output-bg: #222;
+  --button-bg: #444;
+  --button-border: #666;
+  --button-hover: #555;
+  --evaluate-bg: #2a5aa0;
+  --evaluate-border: #1e4a87;
+  --evaluate-hover: #1e4a87;
+  --extra-bg: #3a3a3a;
+  --extra-text: #ccc;
+  --extra-hover: #4a4a4a;
+  --scientific-bg: #4a5a5a;
+  --scientific-border: #3a4a4a;
+  --scientific-hover: #3a4a4a;
+  --numbers-bg: #2a2a2a;
+  --numbers-hover: #3a3a3a;
+  --operators-bg: #8b6914;
+  --operators-border: #6b5010;
+  --operators-hover: #6b5010;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+body.light-mode {
+  /* Light theme */
+  --bg-color: #f0f0f0;
+  --calculator-bg: #ffffff;
+  --calculator-border: #ccc;
+  --text-color: #333;
+  --input-bg: #fff;
+  --input-border: #999;
+  --input-focus-bg: #fff;
+  --output-bg: #f8f8f8;
+  --button-bg: #e8e8e8;
+  --button-border: #bbb;
+  --button-hover: #d8d8d8;
+  --evaluate-bg: #4a90e2;
+  --evaluate-border: #357abd;
+  --evaluate-hover: #357abd;
+  --extra-bg: #f5f5f5;
+  --extra-text: #555;
+  --extra-hover: #eaeaea;
+  --scientific-bg: #6c7b7f;
+  --scientific-border: #5a6569;
+  --scientific-hover: #5a6569;
+  --numbers-bg: #ffffff;
+  --numbers-hover: #f0f0f0;
+  --operators-bg: #d4a574;
+  --operators-border: #b8935f;
+  --operators-hover: #b8935f;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
 body {
   font-family: Arial, sans-serif;
-  background: #f0f0f0;
+  background: var(--bg-color);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  transition: background-color 0.3s ease;
 }
 
 /* Calculator container */
 .calculator {
-  background: #ffffff;
-  border: 2px solid #ccc;
+  background: var(--calculator-bg);
+  border: 2px solid var(--calculator-border);
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px var(--shadow);
   width: 100%;
   max-width: 400px;
+  transition: all 0.3s ease;
+}
+
+/* Header with title and toggle */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 /* Heading */
 h1 {
-  color: #333;
+  color: var(--text-color);
   text-align: center;
   font-size: 1.4rem;
   font-weight: normal;
-  margin-bottom: 15px;
+  flex: 1;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  padding: 8px 12px;
+  background: var(--button-bg);
+  color: var(--text-color);
+  border: 1px solid var(--button-border);
+  border-radius: 4px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--button-hover);
 }
 
 /* Display section */
@@ -44,29 +130,32 @@ h1 {
   width: 100%;
   padding: 12px;
   font-size: 1rem;
-  border: 1px solid #999;
+  border: 1px solid var(--input-border);
   border-radius: 4px;
-  background: #fff;
-  color: #333;
+  background: var(--input-bg);
+  color: var(--text-color);
   margin-bottom: 8px;
   font-family: monospace;
+  transition: all 0.3s ease;
 }
 
 #input-value:focus {
   outline: none;
-  border-color: #666;
+  border-color: #888;
+  background: var(--input-focus-bg);
 }
 
 #output {
-  background: #f8f8f8;
-  color: #333;
+  background: var(--output-bg);
+  color: var(--text-color);
   padding: 10px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--calculator-border);
   border-radius: 4px;
   font-weight: normal;
   font-size: 0.95rem;
   font-family: monospace;
   min-height: 18px;
+  transition: all 0.3s ease;
 }
 
 /* Main controls */
@@ -79,27 +168,28 @@ h1 {
 
 .main-controls button {
   padding: 10px;
-  background: #e8e8e8;
-  color: #333;
-  border: 1px solid #bbb;
+  background: var(--button-bg);
+  color: var(--text-color);
+  border: 1px solid var(--button-border);
   border-radius: 4px;
   font-size: 0.95rem;
   font-weight: normal;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .main-controls button:hover {
-  background: #d8d8d8;
+  background: var(--button-hover);
 }
 
 #evaluate {
-  background: #4a90e2;
+  background: var(--evaluate-bg);
   color: white;
-  border-color: #357abd;
+  border-color: var(--evaluate-border);
 }
 
 #evaluate:hover {
-  background: #357abd;
+  background: var(--evaluate-hover);
 }
 
 /* Extra controls */
@@ -112,16 +202,17 @@ h1 {
 
 .extra-controls button {
   padding: 8px;
-  background: #f5f5f5;
-  color: #555;
-  border: 1px solid #ccc;
+  background: var(--extra-bg);
+  color: var(--extra-text);
+  border: 1px solid var(--calculator-border);
   border-radius: 4px;
   font-size: 0.9rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .extra-controls button:hover {
-  background: #eaeaea;
+  background: var(--extra-hover);
 }
 
 /* Button panels */
@@ -140,16 +231,17 @@ h1 {
 
 .left-panel button {
   padding: 10px 6px;
-  background: #6c7b7f;
+  background: var(--scientific-bg);
   color: white;
-  border: 1px solid #5a6569;
+  border: 1px solid var(--scientific-border);
   border-radius: 4px;
   font-size: 0.85rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .left-panel button:hover {
-  background: #5a6569;
+  background: var(--scientific-hover);
 }
 
 /* Right panel */
@@ -168,17 +260,18 @@ h1 {
 
 .numbers button {
   padding: 12px;
-  background: #ffffff;
-  color: #333;
-  border: 1px solid #999;
+  background: var(--numbers-bg);
+  color: var(--text-color);
+  border: 1px solid var(--calculator-border);
   border-radius: 4px;
   font-size: 1rem;
   font-weight: normal;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .numbers button:hover {
-  background: #f0f0f0;
+  background: var(--numbers-hover);
 }
 
 /* Operators */
@@ -190,16 +283,17 @@ h1 {
 
 .operators button {
   padding: 10px;
-  background: #d4a574;
+  background: var(--operators-bg);
   color: white;
-  border: 1px solid #b8935f;
+  border: 1px solid var(--operators-border);
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .operators button:hover {
-  background: #b8935f;
+  background: var(--operators-hover);
 }
 
 /* Responsive design */
@@ -226,10 +320,10 @@ h1 {
 
 /* Active button state */
 button:active {
-  background: #ccc;
+  background: var(--button-hover);
 }
 
 /* Focus states */
 button:focus {
-  outline: 1px solid #4a90e2;
+  outline: 1px solid var(--evaluate-bg);
 }

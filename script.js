@@ -13,6 +13,22 @@ const backspace = document.getElementById("backspace");
 const storeBtn = document.getElementById("store-btn");
 const memoryBack = document.getElementById("memory-backward");
 const memoryForward = document.getElementById("memory-forward");
+const themeToggle = document.getElementById("theme-toggle");
+
+
+
+// Theme toggle functionality
+themeToggle.addEventListener("click", function() {
+    document.body.classList.toggle("light-mode");
+    
+    // Update button icon
+    if (document.body.classList.contains("light-mode")) {
+        themeToggle.textContent = "🌙";
+    } else {
+        themeToggle.textContent = "☀️";
+    }
+});
+
 
 // store history of expressions
 function addToHistory(expr) {

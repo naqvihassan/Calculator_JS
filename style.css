@@ -286,16 +286,16 @@ h1 {
     padding: 15px;
     margin: 10px;
   }
-  
+
   h1 {
     font-size: 1.2rem;
   }
-  
+
   .button-panels {
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  
+
   .left-panel {
     grid-template-columns: repeat(3, 1fr);
     order: 2;

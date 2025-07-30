@@ -5,7 +5,6 @@ function addToHistory(expr) {
     historyIndex = history.length - 1;
 }
 
-
 function replaceVars(expr) {
     return expr.replace(/\b[a-zA-Z]+\b/g, function (name) {
         if (variables[name] !== undefined) {

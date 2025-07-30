@@ -1,7 +1,6 @@
 const variables = {};
 let lastResult = null;
 let history = [];
-
 let historyIndex = -1;
 
 const input = document.getElementById("input-value");

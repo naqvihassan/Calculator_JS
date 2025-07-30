@@ -4,7 +4,6 @@ function focusInputToEnd() {
     input.setSelectionRange(len, len);
 }
 
-
 buttons.forEach(function (btn) {
     btn.addEventListener("click", function () {
         input.value += btn.dataset.value;
@@ -42,7 +41,7 @@ evaluate.addEventListener("click", function () {
         output.textContent = "Result: ";
     } else if (res.startsWith("Stored:")) {
         output.textContent = res;
-        addToHistory(expr); 
+        addToHistory(expr);
     } else {
         output.textContent = "Error: " + res;
     }
@@ -62,7 +61,7 @@ memoryForward.addEventListener("click", function () {
         input.value = history[historyIndex];
     } else {
         historyIndex = history.length;
-        input.value = ""; 
+        input.value = "";
     }
     focusInputToEnd();
 });
@@ -81,7 +80,7 @@ document.getElementById("all-clear").addEventListener("click", function () {
 input.addEventListener("keydown", function (e) {
     const allowed = [
         "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
-        "+", "-", "*", "/", "(", ")", ".", "^", "x","y", "z",
+        "+", "-", "*", "/", "(", ")", ".", "^", "x", "y", "z",
         "Backspace", "Delete", "ArrowLeft", "ArrowRight", "Enter", "Tab"
     ];
 
